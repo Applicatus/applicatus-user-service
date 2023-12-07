@@ -57,9 +57,11 @@ unit-test-discovery-service: # This job runs in the test stage.
   stage: docker_push # It only starts when the job in the build stage completes successfully.
   script:
     - echo "Running unit tests..."
-    - cd api-gateway
+    - cd ..
+    - cd ..
+    - cd user-service
     - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-    - docker push evaldas483/applicatus-api-gateway
+    - docker push evaldas483/applicatus-user-service
   runs-on:
     - self-hosted
   only:
